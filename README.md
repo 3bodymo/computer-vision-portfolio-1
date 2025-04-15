@@ -7,6 +7,7 @@ This project involves solving two real-world computer vision challenges.
 - [Development Guidelines](#development-guidelines)
   - [Code Documentation](#code-documentation-requirements)
   - [Automated Quality Checks](#automated-code-quality-checks)
+  - [Branch Protection](#branch-protection)
 - [Projects](#projects)
 - [Setup and Installation](#setup-and-installation)
 - [Contributors](#contributors)
@@ -65,6 +66,23 @@ This repository includes automated workflows that run on every pull request to m
 - **Code Formatting**
   - Uses `black` to automatically format Python code
   - The workflow will automatically commit formatting changes to your PR
+
+### Branch Protection 🔒
+
+The `main` branch is protected to ensure code quality and stability:
+
+- Direct pushes to `main` are not allowed
+- All changes must go through pull requests
+- Pull requests require at least one review before merging
+- Status checks (including automated tests) must pass before merging
+
+To contribute:
+
+1. Create a new branch from `main`
+2. Make your changes
+3. Submit a pull request
+4. Address review comments
+5. Wait for approval and merge
 
 ## Projects 📁
 
