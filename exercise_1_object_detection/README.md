@@ -88,12 +88,12 @@ We tested our trained model on 4 images to demonstrate its capabilities in real-
 
 <table>
   <tr>
-    <td><img src="model/results/test1.jpg" alt="Test Result 1" width="100%"></td>
-    <td><img src="model/results/test2.jpg" alt="Test Result 2" width="100%"></td>
+    <td><img src="model/results/IMG_20250419_122004.jpg" alt="Test Result 1" width="100%"></td>
+    <td><img src="model/results/IMG_20250419_122011.jpg" alt="Test Result 2" width="100%"></td>
   </tr>
   <tr>
-    <td><img src="model/results/test3.jpg" alt="Test Result 3" width="100%"></td>
-    <td><img src="model/results/test4.jpg" alt="Test Result 4" width="100%"></td>
+    <td><img src="model/results/IMG_20250419_122039.jpg" alt="Test Result 3" width="100%"></td>
+    <td><img src="model/results/IMG_20250419_122103.jpg" alt="Test Result 4" width="100%"></td>
   </tr>
 </table>
 
