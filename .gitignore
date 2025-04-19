@@ -1,0 +1,6 @@
+__pycache__
+
+exercise_1_object_detection/preprocessed_data
+exercise_1_object_detection/dataset/*
+exercise_1_object_detection/runs/*
+*.pt
