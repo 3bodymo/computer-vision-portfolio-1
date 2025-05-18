@@ -86,11 +86,20 @@ To contribute:
 
 ## Projects 📁
 
-_[Project descriptions will be added as they are completed]_
+### Exercise 1: Object Detection for Giraffe and Rhinoceros Recognition
+
+A computer vision system that identifies giraffe and rhinoceros figures on a conveyor belt using the YOLOv8 model. The project demonstrates accurate object detection with custom-trained models capable of recognizing these specific toy animals from various angles and under different lighting conditions.
+
+### Exercise 2: Camera-Based Queue Analysis with Person Re-Identification
+
+A real-time queue analysis system using a dual-camera setup to track individuals in an amusement park queue. The system leverages appearance-based person re-identification to maintain consistent tracking across multiple camera views, avoid duplicate counts, and estimate waiting times for each person in the queue.
 
 ## Setup and Installation 💻
 
-_[Project setup will be added as they are completed]_
+For setup and installation instructions, please refer to the README.md file within each project folder:
+
+- [Exercise 1: Object Detection Setup](./exercise_1_object_detection/README.md)
+- [Exercise 2: Queue Analysis Setup](./exercise_2_queue_analysis/README.md)
 
 ## Contributors 👥
 

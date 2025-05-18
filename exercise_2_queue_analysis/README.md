@@ -61,13 +61,14 @@ If a person appears in both right and left views, their embedding vectors are co
 
 ### 6. ETA (Estimated Time of Arrival)
 
-- Each person’s ETA is computed based on:
+- Each person's ETA is computed based on:
 
   ```
   ETA = people_in_front × average_time_per_person
   ```
 
 - The ETA is displayed inside each bounding box.
+- Our approach can update average waiting time with each person who exits the queue, improving accuracy over time.
 
 ## 📊 Output
 

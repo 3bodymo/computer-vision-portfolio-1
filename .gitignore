@@ -4,3 +4,6 @@ exercise_1_object_detection/preprocessed_data
 exercise_1_object_detection/dataset/*
 exercise_1_object_detection/runs/*
 *.pt
+*.pth
+output_frames
+first-video.mp4
