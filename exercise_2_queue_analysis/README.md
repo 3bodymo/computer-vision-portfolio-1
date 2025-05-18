@@ -115,7 +115,7 @@ The project includes a demo video that shows the final output of our queue analy
 - Estimated Time of Arrival (ETA) shown above each bounding box
 - Live queue count tracking
 
-![Queue Analysis Example](demo/example.jpeg)
+![Queue Analysis Example](demo/example.png)
 
 ### ▶️ Watch the Output
 
