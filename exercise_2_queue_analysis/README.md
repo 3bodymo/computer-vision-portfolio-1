@@ -23,7 +23,7 @@ The system takes as input a **stitched dual-view video** which combines:
 - **Right camera view** (entry side of the queue)
 - **Left camera view** (boarding side)
 
-The people in queue appear first on the right side and move toward the left camera, forming an **L-shaped queue**.
+The people in queue appear first on the right side and move toward the left camera, forming an **U-shaped queue**.
 
 ## 📐 Queue Detection Logic
 
