@@ -33,7 +33,7 @@ The queue is defined based on each person's location over the x axis.
 
 ### 1. Frame Extraction
 
-The video is processed at ~10 frames per second using OpenCV.
+The video is processed at ~6 frames per second using OpenCV.
 
 ### 2. Person Detection
 
