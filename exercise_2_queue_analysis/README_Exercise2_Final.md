@@ -103,35 +103,12 @@ If a person appears in both right and left views, their embedding vectors are co
 | `queue_polygon`       | Points defining the queue area in the left camera                        |
 | `embedding_history`   | Controls how many previous features are stored per ID                    |
 
-## 📁 Project Structure
-
-```
-.
-├── person_reid-3.ipynb        # Main implementation notebook
-├── video_input/               # Folder for input stitched video
-├── outputs/                   # Folder for saving output frames or video (optional)
-├── reid_model/                # Folder for storing ReID model weights
-├── utils/                     # Utility functions (if modularized)
-└── README.md                  # Project documentation
-```
 
 ## 📉 Limitations
 
 - Cross-camera matching may fail if people are heavily occluded or partially visible.
 - ETA assumes a continuous and stable queue without large gaps or batching.
 - System relies on visual appearance and may fail with visually similar individuals.
-
-## 👥 Team Members
-
-- Your Name
-- Teammate 1
-- Teammate 2
-- Teammate 3
-- Teammate 4
-
-## 📜 License
-
-MIT License
 
 
 ## 🎬 Demo: Queue Analysis Output
@@ -145,10 +122,12 @@ The project includes a demo video that shows the final output of our queue analy
 - Estimated Time of Arrival (ETA) shown above each bounding box
 - Live queue count tracking
 
+![Queue Analysis Example](demo/example.jpeg)
+
 ### ▶️ Watch the Output
 
 You can view the demo output here:
 
-📺 **Video File**: `video_outputs/first-video-counted_3.mp4`
+📺[Click to watch demo video](https://drive.google.com/file/d/1Xa0DWALDKdux5ZkKsz8OaU9aKi-fAnhO/view?usp=sharing)
 
-> Note: The video showcases detections from a pre-processed, stitched dual-view camera setup.
+> The video showcases detections across both camera views, ID consistency, and ETA estimation.
