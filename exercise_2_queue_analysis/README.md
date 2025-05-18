@@ -14,36 +14,36 @@ Install the necessary packages using:
 pip install -r requirements.txt
 ```
 
-Additionally, make sure to install [TorchReID](https://github.com/KaiyangZhou/deep-person-reid) and download the pretrained ReID model (`resnet50` or `osnet`) before running the notebook.
+Additionally, make sure to install [TorchReID](https://github.com/KaiyangZhou/deep-person-reid) and download the pretrained ReID model [resnet50](https://drive.google.com/file/d/1yiBteqgIZoOeywE8AhGmEQl7FTVwrQmf/view) before running the code.
 
 ## 🎥 Input Data
 
 The system takes as input a **stitched dual-view video** which combines:
 
-- **Right camera view
-- **Left camera view
+- **Right camera view**
+- **Left camera view**
 
 The queue starts from the left side and progresses toward the right, forming a U-shaped path across the two camera views.
 
 ## 📐 Queue Detection Logic
 
-The queue is defined based on each person's location over the x axis. 
+The queue is defined based on each person's location over the x axis.
 
 ## ⚙️ Implementation Overview
 
 ### 1. Frame Extraction
 
-The video is processed at ~3 frames per second using OpenCV.
+The video is processed at ~10 frames per second using OpenCV.
 
 ### 2. Person Detection
 
-We use the `YOLOv3` model (`yolov3u.pt`) to detect people in each frame. Detections are filtered by confidence and used to generate bounding boxes.
+We use the `YOLOv3` model (`yolov3u.pt`) to detect people in each frame through the `PersonDetector` class in the `model.detection` module. Detections are filtered by confidence and used to generate bounding boxes.
 
 ### 3. Feature Extraction and Re-Identification
 
-- Appearance-based features are extracted using a **pretrained ResNet50 model** from TorchReID.
+- Appearance-based features are extracted using a **pretrained ResNet50 model** from TorchReID through the `PersonReID` class in the `model.reid` module.
 - For each person, an embedding vector is computed.
-- These vectors are matched against a gallery of historical embeddings using cosine similarity (via FAISS) to assign consistent person IDs.
+- These vectors are matched against a gallery of historical embeddings using cosine similarity to assign consistent person IDs.
 
 ### 4. Cross-Camera Matching
 
@@ -74,38 +74,35 @@ If a person appears in both right and left views, their embedding vectors are co
 
 ## ▶️ How to Run
 
-1. Place your video (e.g., `first-video.mp4`) in a folder named `video_input/`.
+1. Place the video (`first-video.mp4`) in the project directory (`exercise_2_queue_analysis`).
 
-2. Open the notebook:
-
-   ```bash
-   jupyter notebook person_reid-3.ipynb
-   ```
-
-   Or run it as a script (if exported):
+2. Run the main script:
 
    ```bash
-   python person_reid.py --video_path video_input/first-video.mp4
+   python main.py
    ```
 
-3. Modify parameters like thresholds or polygon coordinates if needed.
+   Or use the Jupyter notebook:
+
+   ```bash
+   jupyter notebook main.ipynb
+   ```
 
 ## ⚙️ Parameters You Can Tune
 
-| Parameter             | Description                                                              |
-|-----------------------|--------------------------------------------------------------------------|
-| `similarity_threshold`| Cosine similarity threshold for matching embeddings (default: 0.66)      |
-| `confidence > 0.81`   | Minimum YOLO detection confidence to assign a new ID                     |
-| `queue_polygon`       | Points defining the queue area in the left camera                        |
-| `embedding_history`   | Controls how many previous features are stored per ID                    |
-
+| Parameter              | Description                                                           |
+| ---------------------- | --------------------------------------------------------------------- |
+| `similarity_threshold` | Cosine similarity threshold for matching embeddings (default: 0.66)   |
+| `confidence > 0.75`    | Minimum YOLO detection confidence to assign a new ID                  |
+| `queue_boundary_y`     | Y-coordinate threshold for queue area (default: 650)                  |
+| `exit_boundary_x`      | X-coordinate threshold for exit detection (default: 1910)             |
+| `embedding_history`    | Controls how many previous features are stored per ID (default: 1000) |
 
 ## 📉 Limitations
 
 - Cross-camera matching may fail if people are heavily occluded or partially visible.
 - ETA assumes a continuous and stable queue without large gaps or batching.
 - System relies on visual appearance and may fail with visually similar individuals.
-
 
 ## 🎬 Demo: Queue Analysis Output
 
@@ -124,6 +121,6 @@ The project includes a demo video that shows the final output of our queue analy
 
 You can view the demo output here:
 
-📺[Click to watch demo video](https://drive.google.com/file/d/1Xa0DWALDKdux5ZkKsz8OaU9aKi-fAnhO/view?usp=sharing)
+📺[Click to watch demo video](https://drive.google.com/file/d/178TXhMfKqrzMf6-Fepgv21G8GMcHcPX0/view)
 
 > The video showcases detections across both camera views, ID consistency, and ETA estimation.

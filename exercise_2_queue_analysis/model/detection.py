@@ -9,18 +9,17 @@ class PersonDetector:
     This class handles person detection and filtering based on size and position.
     """
 
-    def __init__(self, model_path="yolov3u.pt", conf_threshold=0.75, class_id=0):
+    def __init__(self, model_path="yolov3u.pt", conf_threshold=0.75):
         """
         Initialize the person detector.
 
         Args:
             model_path (str, optional): Path to the YOLO model. Defaults to 'yolov3u.pt'.
             conf_threshold (float, optional): Confidence threshold for detections. Defaults to 0.75.
-            class_id (int, optional): Class ID for person detection. Defaults to 0.
         """
         self.model = YOLO(model_path)
         self.conf_threshold = conf_threshold
-        self.class_id = class_id
+        self.class_id = 0
 
         # Font settings for visualization
         self.font = cv2.FONT_HERSHEY_SIMPLEX
