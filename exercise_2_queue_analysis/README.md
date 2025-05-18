@@ -20,19 +20,14 @@ Additionally, make sure to install [TorchReID](https://github.com/KaiyangZhou/de
 
 The system takes as input a **stitched dual-view video** which combines:
 
-- **Right camera view** (entry side of the queue)
-- **Left camera view** (boarding side)
+- **Right camera view
+- **Left camera view
 
-The people in queue appear first on the right side and move toward the left camera, forming an **U-shaped queue**.
+The queue starts from the left side and progresses toward the right, forming a U-shaped path across the two camera views.
 
 ## 📐 Queue Detection Logic
 
-The queue is defined using polygonal areas:
-
-- On the **left camera view**, a polygon is used to precisely identify people in queue.
-- The **right camera view** does not use a polygon. Instead, a heuristic is used based on the bounding box area, aspect ratio, and detection confidence.
-
-This hybrid approach ensures accurate inclusion and avoids missing people at the entrance.
+The queue is defined based on each person's location over the x axis. 
 
 ## ⚙️ Implementation Overview
 
