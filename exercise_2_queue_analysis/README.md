@@ -33,7 +33,7 @@ The queue is defined based on each person's location over the x axis.
 
 ### 1. Frame Extraction
 
-The video is processed at ~3 frames per second using OpenCV.
+The video is processed at ~6 frames per second using OpenCV.
 
 ### 2. Person Detection
 
@@ -72,31 +72,14 @@ If a person appears in both right and left views, their embedding vectors are co
 - ETA values rendered on screen
 - Dynamic people count inside the queue zone
 
-## ▶️ How to Run
 
-1. Place your video (e.g., `first-video.mp4`) in a folder named `video_input/`.
-
-2. Open the notebook:
-
-   ```bash
-   jupyter notebook person_reid-3.ipynb
-   ```
-
-   Or run it as a script (if exported):
-
-   ```bash
-   python person_reid.py --video_path video_input/first-video.mp4
-   ```
-
-3. Modify parameters like thresholds or polygon coordinates if needed.
 
 ## ⚙️ Parameters You Can Tune
 
 | Parameter             | Description                                                              |
 |-----------------------|--------------------------------------------------------------------------|
 | `similarity_threshold`| Cosine similarity threshold for matching embeddings (default: 0.66)      |
-| `confidence > 0.81`   | Minimum YOLO detection confidence to assign a new ID                     |
-| `queue_polygon`       | Points defining the queue area in the left camera                        |
+| `confidence > 0.81`   | Minimum YOLO detection confidence to assign a new ID                     |                
 | `embedding_history`   | Controls how many previous features are stored per ID                    |
 
 
